@@ -1,0 +1,19 @@
+.navbar-brand{
+    max-width: 70px;
+    max-height:70px;
+    border-radius: 100%;
+}
+button.logout {
+    outline: none;
+    color: rgba(255,255,255,0.9);
+    background: transparent;
+    border:none;
+    outline:none;
+}
+
+i.fa.fa-sign-out {
+    color: rgba(255,255,255,0.8);
+    font-size: 25px;
+    position: relative;
+    top: 3px;
+}

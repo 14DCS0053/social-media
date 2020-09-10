@@ -1,0 +1,23 @@
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+var cors = require('cors');
+const PORT_NO = 5000;
+const mongoose = require("mongoose");
+const { mongoURL } = require("./config");
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+const fileUpload = require("express-fileupload");
+app.use(fileUpload());
+mongoose.connect(mongoURL).then(() => console.log("monoc"));
+app.get("/", (req, res) => {
+    res.send("hello");
+});
+app.use("/", require("./Route/user"));
+app.use("/post", require("./Route/post"));
+app.use("/test", require("./Route/test"));
+app.use("/profile", require("./Route/profile"));
+app.use("/verifyEmail", require("./Route/verifyEmail"));
+app.use("sendToken", require("./Route/ResendToken"));
+app.listen(PORT_NO, () => console.log("server running"));

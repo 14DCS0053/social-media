@@ -1,0 +1,12 @@
+.LoginForm .form-group {
+    position: relative;
+}
+
+.LoginForm i {
+    position: absolute;
+    left: 13px;
+    top: 11px;
+    font-size: 18px;
+}
+
+.LoginForm .form-control {padding-left: 40px;}
